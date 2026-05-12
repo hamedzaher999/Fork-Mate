@@ -1,0 +1,7 @@
+1. check if has discount  may causes exceptions
+2.send the coupons as an id or coupons number
+3.need to sent confirm password to server?
+4.how edit info response should look like
+3.needed info to send with request for get orderDetails from archive
+6.changing password,<should backend send a new url for changing or send the code with the new password>
+7.is the coupon id could be the same in a different user??

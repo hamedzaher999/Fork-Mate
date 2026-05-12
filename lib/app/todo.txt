@@ -1,0 +1,2 @@
+1. add pagination in home page
+2. add pagination in services page

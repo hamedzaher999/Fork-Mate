@@ -1,0 +1,56 @@
+  {
+  "order_id": 129745,
+  "final_price": 0.0,
+  "is_gift": false,
+  "order_status": "pending",
+  "order_payment_status": "paid",
+  "created_at": "2025-10-24T10:35:00Z",
+  "delivered_at": null,
+  "cancel_message":null,
+  "used_coupons": {
+    "26581": 20.0
+  },
+  "used_discount_code": {
+  },
+  "free_delivery_coupons": true,
+  "content": {
+    "items": [
+      {
+        "id": 2,
+        "name": "بيترا",
+        "count": 5,
+        "price": 90000.0,
+        "chosenPreference": ["جبن اضافي"]
+      }
+    ],
+    "offers": [
+      {
+        "id": 2,
+        "name": "عرض الغداء المميز",
+        "description": "",
+        "count": 1,
+        "price": 50000.0
+      }
+    ],
+    "gifts": [
+    ],
+    "content_price": 1400000.0
+  },
+  "delivery": {
+    "method": "delivery",
+    "delivery_payment_status": "paid",
+    "location_details": {
+      "name": "ميني ماركت العرين",
+      "latitude": 33.5052748,
+      "longitude": 36.2422356,
+      "distance": 2597.6,
+      "price": 0.0
+    }
+  },
+  "payment": {
+    "method": "point",
+    "payment_status": "paid",
+    "details": null
+  }
+}
+

@@ -1,0 +1,203 @@
+{
+    "status":"success",
+    "message":"login successfully",
+    "data":{
+        "role":"customer",
+        "token":"abcdefgh",
+        "name":"mohamed",
+        "userName":"mhhmd",
+        "phoneNumber":"09512364",
+        "lat":"",
+        "lng":""
+    }
+}
+
+
+[
+  {
+    "id": 1,
+     "category":{
+    "id": 1,
+    "title": "غربي",
+      "service":{ "id": 1, "name": "وجبات" }
+  },
+    "image": "https://images.pexels.com/photos/5903382/pexels-photo-5903382.jpeg?cs=srgb&dl=pexels-roman-odintsov-5903382.jpg&fm=jpg",
+    "name": "بيتزا",
+    "price": 90000.00,
+    "rate": "4.6",
+    "ingredients": ["عجينة البيتزا", "جبن موزاريلا", "صوص طماطم", "فطر", "فلفل أخضر"],
+    "has_discount": true,
+    "discount": {
+      "type": "percentage",
+      "discount": 20.0,
+      "lefttime": "03:45:00"
+    },
+    "preference": [
+      {
+        "id": 1,
+        "type": "single-select",
+        "preference": [
+          { "name": "صغير", "price_difference": -15.0 },
+          { "name": "وسط", "price_difference": 0.0 },
+          { "name": "كبير", "price_difference": 20.0 }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "multi-select",
+        "preference": [
+          { "name": "جبن إضافي", "price_difference": 8.0 },
+          { "name": "لحم مفروم", "price_difference": 12.0 }
+        ]
+      }
+    ],
+    "my_rate": 4
+  },
+ 
+  {
+    "id": 3,
+     "category":{
+    "id": 1,
+    "title": "غربي",
+      "service":{ "id": 1, "name": "وجبات" }
+  },
+    "image": "https://images.pexels.com/photos/31450815/pexels-photo-31450815.jpeg?cs=srgb&dl=pexels-pedrofurtadoo-31450815.jpg&fm=jpg",
+    "name": "بوفالو برغر",
+    "price": 78000.00,
+    "rate": "4.7",
+    "ingredients": ["خبز برغر", "دجاج بوفالو", "خس", "طماطم", "صوص بوفالو"],
+    "has_discount": true,
+    "discount": {
+      "type": "percentage",
+      "discount": 15.0,
+      "lefttime": "00:00:25"
+    },
+    "preference": [
+      {
+        "id": 1,
+        "type": "single-select",
+        "preference": [
+          { "name": "صغير", "price_difference": -12.0 },
+          { "name": "وسط", "price_difference": 0.0 },
+          { "name": "كبير", "price_difference": 18.0 }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "multi-select",
+        "preference": [
+          { "name": "بطاطا مقلية", "price_difference": 10.0 },
+          { "name": "جبن إضافي", "price_difference": 6.0 }
+        ]
+      }
+    ],
+    "my_rate": 5
+  },
+ 
+  {
+    "id": 5,
+     "category":{
+    "id": 1,
+    "title": "غربي",
+      "service":{ "id": 1, "name": "وجبات" }
+  },
+    "image": "https://images.pexels.com/photos/2833499/pexels-photo-2833499.jpeg?cs=srgb&dl=pexels-marianasilvestre-2833499.jpg&fm=jpg",
+    "name": "بروستد",
+    "price": 110000.00,
+    "rate": "4.9",
+    "ingredients": ["دجاج بروستد", "بهارات خاصة", "بطاطا", "صلصة"],
+    "has_discount": true,
+    "discount": {
+      "type": "percentage",
+      "discount": 10.0,
+      "lefttime": "05:00:00"
+    },
+    "preference": [
+      {
+        "id": 1,
+        "type": "single-select",
+        "preference": [
+          { "name": "نصف دجاجة", "price_difference": -20.0 },
+          { "name": "وجبة كاملة", "price_difference": 0.0 },
+          { "name": "وجبة عائلية", "price_difference": 25.0 }
+        ]
+      },
+      {
+        "id": 2,
+        "type": "multi-select",
+        "preference": [
+          { "name": "بطاطا إضافية", "price_difference": 8.0 },
+          { "name": "مشروب غازي", "price_difference": 5.0 }
+        ]
+      }
+    ],
+    "my_rate": 4
+  },
+ 
+  {
+    "id": 7,
+     "category":{
+    "id": 1,
+    "title": "غربي",
+      "service":{ "id": 1, "name": "وجبات" }
+  },
+    "image": "https://images.pexels.com/photos/461198/pexels-photo-461198.jpeg",
+    "name": "سوشي",
+    "price": 125000.00,
+    "rate": "4.6",
+    "ingredients": ["أرز", "سمك سالمون", "أفوكادو", "طحالب"],
+    "has_discount": true,
+    "discount": {
+      "type": "percentage",
+      "discount": 25.0,
+      "lefttime": "01:15:00"
+    },
+    "preference": [],
+    "my_rate": 5
+  },
+ 
+  {
+    "id": 9,
+     "category":{
+    "id": 1,
+    "title": "غربي",
+      "service":{ "id": 1, "name": "وجبات" }
+  },
+    "image": "https://images.pexels.com/photos/106343/pexels-photo-106343.jpeg",
+    "name": "ستيك لحم",
+    "price": 185000.00,
+    "rate": "4.9",
+    "ingredients": ["لحم بقر", "بهارات", "خضار مشوية"],
+    "has_discount": true,
+    "discount": {
+      "type": "percentage",
+      "discount": 30.0,
+      "lefttime": "04:00:00"
+    },
+    "preference": [],
+    "my_rate": 5
+  },
+ 
+  {
+    "id": 11,
+     "category":{
+    "id": 1,
+    "title": "غربي",
+      "service":{ "id": 1, "name": "وجبات" }
+  },
+    "image": "https://images.pexels.com/photos/461382/pexels-photo-461382.jpeg",
+    "name": "كباب",
+    "price": 95000.00,
+    "rate": "4.5",
+    "ingredients": ["لحم مفروم", "بصل", "بهارات"],
+    "has_discount": true,
+    "discount": {
+      "type": "percentage",
+      "discount": 12.0,
+      "lefttime": "06:30:00"
+    },
+    "preference": [],
+    "my_rate": 4
+  },
+ 
+]
