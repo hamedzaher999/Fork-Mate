@@ -5,9 +5,7 @@ import 'package:latlong2/latlong.dart';
 import 'package:fork_mate/models/customer/location_model.dart';
 
 class LocationServices {
-  static final String apiKey =
-      'eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjcyYjIwYzNjYWE3MDQ2MDBhZDNjZGRkYjYwN2FkYTc3IiwiaCI6Im11cm11cjY0In0=';
-
+  static const String apiKey = String.fromEnvironment('ORS_API_KEY');
   static Future<double> pricePerMeter() async {
     final url = Uri.parse('$baseURL/pricePerMeter');
     try {

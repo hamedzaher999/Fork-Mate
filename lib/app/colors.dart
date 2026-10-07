@@ -11,8 +11,8 @@ const Color stars = Color(0xFFFFD700); // yellow
 const Color black = Color.fromARGB(204, 0, 0, 0);
 const Color white = Color.fromARGB(204, 255, 255, 255);
 const Color imagePlaceHolderColor = Color.fromARGB(255, 198, 196, 196);
-const baseURL = 'https://amock.io/api/hamed';
-//get-----------------------------
+const baseURL =
+    'https://fork-mate-mock.onrender.com/api/hamed'; //get-----------------------------
 Color get mainColor => Get.isDarkMode ? const Color(0xAA000000) : Colors.white;
 Color get backGroundColor => Get.isDarkMode ? Color(0xFF303030) : Colors.white;
 Color get xMainColor => Get.isDarkMode ? Colors.white : Colors.black;
