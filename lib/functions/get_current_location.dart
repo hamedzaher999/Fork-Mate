@@ -21,7 +21,9 @@ Future<LocationsModel?> getCurrentLocation() async {
   }
   showWaitingPopScope();
   try {
-    Position position = await Geolocator.getCurrentPosition();
+    Position position = await Geolocator.getCurrentPosition(
+      locationSettings: const LocationSettings(accuracy: LocationAccuracy.high),
+    ).timeout(const Duration(seconds: 15));
     LocationsModel? locationsModel = await LocationServices.fetchLocations(
       storeLocation,
       LatLng(position.latitude, position.longitude),

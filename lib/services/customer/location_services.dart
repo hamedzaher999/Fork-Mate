@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'package:flutter/material.dart';
 import 'package:fork_mate/app/colors.dart';
 import 'package:http/http.dart' as http;
 import 'package:latlong2/latlong.dart';
@@ -6,45 +7,29 @@ import 'package:fork_mate/models/customer/location_model.dart';
 
 class LocationServices {
   static const String apiKey = String.fromEnvironment('ORS_API_KEY');
-  static Future<double> pricePerMeter() async {
-    final url = Uri.parse('$baseURL/pricePerMeter');
-    try {
-      final response = await http.get(url);
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        return data['price'];
-      } else {
-        throw Exception('location error');
-      }
-    } catch (e) {
-      throw Exception('location error');
-    }
-  }
-
   static Future<String?> fetchLocationName(LatLng point) async {
     final url = Uri.parse(
       'https://api.openrouteservice.org/geocode/reverse'
-      '?api_key=$apiKey'
-      '&point.lon=${point.longitude}'
-      '&point.lat=${point.latitude}',
+      '?api_key=$apiKey&point.lon=${point.longitude}&point.lat=${point.latitude}',
     );
-
-    try {
-      final response = await http.get(url);
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-
-        if (data['features'] != null && data['features'].isNotEmpty) {
-          return data['features'][0]['properties']['name'];
-        } else {
-          return null;
-        }
-      } else {
-        throw Exception('location error');
-      }
-    } catch (e) {
-      throw Exception('location error');
+    final response = await http.get(url);
+    debugPrint('ORS name ${response.statusCode}: ${response.body}');
+    if (response.statusCode != 200) {
+      throw Exception('name ${response.statusCode}');
     }
+    final data = jsonDecode(response.body);
+    final features = data['features'] as List?;
+    if (features == null || features.isEmpty) return null;
+    final p = features[0]['properties'];
+    return (p['name'] ?? p['label']) as String?;
+  }
+
+  static Future<double> pricePerMeter() async {
+    final response = await http.get(Uri.parse('$baseURL/pricePerMeter'));
+    debugPrint('price ${response.statusCode}: ${response.body}');
+    if (response.statusCode != 200)
+      throw Exception('price ${response.statusCode}');
+    return (jsonDecode(response.body)['price'] as num).toDouble();
   }
 
   static Future<LocationsModel> fetchLocations(LatLng start, LatLng end) async {
@@ -55,26 +40,23 @@ class LocationServices {
       '&end=${end.longitude},${end.latitude}'
       '&preference=shortest',
     );
-
-    try {
-      final response = await http.get(url);
-      final String? locationName = await fetchLocationName(end);
-      final double price = await pricePerMeter();
-      if (response.statusCode == 200) {
-        final data = jsonDecode(response.body);
-        LocationsModel locationModel = LocationsModel.fromJson(
-          data,
-          end,
-          locationName,
-        );
-        locationModel.calculatePrice(price);
-        return locationModel;
-      } else {
-        throw Exception('location error');
-      }
-    } catch (e) {
-      throw Exception('location error');
+    final response = await http.get(url);
+    debugPrint('ORS route ${response.statusCode}: ${response.body}');
+    if (response.statusCode != 200) {
+      throw Exception('route ${response.statusCode}');
     }
+
+    String? name;
+    try {
+      name = await fetchLocationName(end);
+    } catch (e) {
+      debugPrint('name failed: $e');
+    }
+    final price = await pricePerMeter();
+
+    final model = LocationsModel.fromJson(jsonDecode(response.body), end, name);
+    model.calculatePrice(price);
+    return model;
   }
 
   static Future<LatLng?> searchLocationByName(String query) async {

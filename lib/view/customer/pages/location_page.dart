@@ -41,7 +41,8 @@ class LocationPage extends StatelessWidget {
                   children: [
                     TileLayer(
                       urlTemplate:
-                          'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',
+                          'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+
                       subdomains: ['a', 'b', 'c', 'd'],
                       userAgentPackageName: 'com.shawarma.myapp',
                     ),
